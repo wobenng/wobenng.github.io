@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -228,7 +228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/第二篇博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/16/《CSS揭秘》笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hangbin">
@@ -247,7 +247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/07/第二篇博客/" itemprop="url">第二篇博客</a></h1>
+                <a class="post-title-link" href="/2017/10/16/《CSS揭秘》笔记/" itemprop="url">《CSS揭秘》笔记</a></h1>
         
 
         <div class="post-meta">
@@ -257,10 +257,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-07T13:38:48+08:00">
-                2017-10-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T14:06:33+08:00">
+                2017-10-16
               </time>
             
 
@@ -299,126 +299,21 @@
       
         
           
-            <h1 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h1>
-          
-        
-      
-    </div>
-    
-    
-    
+            <p></p><h3><strong>七、伪随机背景</strong></h3><p></p>
+<p></p><h4><font color="red">问题:</font>重复背景很呆板,如何让背景图片看起来更自然</h4><p></p>
+<p></p><h4><font color="red">解决方法:</font></h4><p></p>
+<pre>
+background:white;
+background-image:linear-gradient(90deg,#fb3 10px,transparent 0),<br>                 linear-gradient(90deg,#ab4 20px,transparent 0),<br>                 linear-gradient(90deg,#655,20px,transparent 0);
+background-size:80px 100%,60px 100%,40px 100%;</pre>
 
-    
+<p><div align="center"><img src="http://img.blog.csdn.net/20171016152152129?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br></p>
+<p></p><p><strong>注意:应将图片间隔最大的放在最顶层,即background-image的最上面,以免重复规律被察觉.实际上这张图片是每240px重复一次,240px是80px,60px,40px的最小公倍数</strong></p><p></p>
+<p></p><p>可以看出最小公倍数越大,那么重复的频率就越低,背景图案也就越真实.所以在选取背景图片尺寸时,应选择质数,三个质数相乘,最小公倍数就会很大,比如按书中所讲,选择41,61,83,就会得到如下背景图:</p><p></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171016163435257?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%"></div><br></p>
+<p></p><p><strong><font color="red">END</font></strong></p><p></p>
+<p></p><p><em>17.10.16</em></p><hr color="gray"><p></p>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/开博大吉/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="hangbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wobenng的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/07/开博大吉/" itemprop="url">开博大吉</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-07T11:54:08+08:00">
-                2017-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="欢迎来到wobenng的博客"><a href="#欢迎来到wobenng的博客" class="headerlink" title="欢迎来到wobenng的博客"></a>欢迎来到wobenng的博客</h1>
           
         
       
@@ -495,7 +390,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-07T11:16:34+08:00">
                 2017-10-07
@@ -627,14 +522,23 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
             
 
           </nav>
@@ -680,7 +584,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
