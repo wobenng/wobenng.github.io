@@ -88,7 +88,11 @@
 <meta property="og:description" content="七、伪随机背景 问题:重复背景很呆板,如何让背景图片看起来更自然 解决方法:  background:white; background-image:linear-gradient(90deg,#fb3 10px,transparent 0),                 linear-gradient(90deg,#ab4 20px,transparent 0),">
 <meta property="og:image" content="http://img.blog.csdn.net/20171016152152129?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171016163435257?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-10-16T08:53:41.018Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20171017172701872?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171017200630275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171018114238766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171018151036324?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-10-18T07:39:17.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CSS揭秘》笔记">
 <meta name="twitter:description" content="七、伪随机背景 问题:重复背景很呆板,如何让背景图片看起来更自然 解决方法:  background:white; background-image:linear-gradient(90deg,#fb3 10px,transparent 0),                 linear-gradient(90deg,#ab4 20px,transparent 0),">
@@ -188,7 +192,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -198,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -262,7 +266,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T14:06:33+08:00">
                 2017-10-16
@@ -303,8 +307,8 @@
 
       
         <p></p><h3><strong>七、伪随机背景</strong></h3><p></p>
-<p></p><h4><font color="red">问题:</font>重复背景很呆板,如何让背景图片看起来更自然</h4><p></p>
-<p></p><h4><font color="red">解决方法:</font></h4><p></p>
+<p></p><h4><em>问题:重复背景很呆板,如何让背景图片看起来更自然</em></h4><p></p>
+<p></p><h4><em>解决方法:</em></h4><p></p>
 <pre>
 background:white;
 background-image:linear-gradient(90deg,#fb3 10px,transparent 0),<br>                 linear-gradient(90deg,#ab4 20px,transparent 0),<br>                 linear-gradient(90deg,#655,20px,transparent 0);
@@ -314,8 +318,37 @@ background-size:80px 100%,60px 100%,40px 100%;</pre>
 <p></p><p><strong>注意:应将图片间隔最大的放在最顶层,即background-image的最上面,以免重复规律被察觉.实际上这张图片是每240px重复一次,240px是80px,60px,40px的最小公倍数</strong></p><p></p>
 <p></p><p>可以看出最小公倍数越大,那么重复的频率就越低,背景图案也就越真实.所以在选取背景图片尺寸时,应选择质数,三个质数相乘,最小公倍数就会很大,比如按书中所讲,选择41,61,83,就会得到如下背景图:</p><p></p>
 <p><div align="center"><img src="http://img.blog.csdn.net/20171016163435257?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%"></div><br></p>
-<p></p><p><strong><font color="red">END</font></strong></p><p></p>
+<p></p><p><strong>END</strong></p><p></p>
 <p></p><p><em>17.10.16</em></p><hr color="gray"><p></p>
+<p></p><h3><strong>八、连续得到图像边框</strong></h3><p></p>
+<p></p><h4><em>问题:让背景图片或图案成为边框</em></h4><p></p>
+<p></p><h4><em>解决方法：</em></h4><p></p>
+<p></p><p></p>
+<p><pre><br>.someclass{<br>    padding:1em;<br>    border:1em solid transparent;<br>    background:linear-gradient(white,white),url(XXX.jpg);<br>    background-size:cover;<br>    background-clip:padding-box,border-box;<br>}</pre><br>只用在一个元素上使用背景图叠加背景渐变，再将上一层白色背景渐变的背景填充从内边距开始，边框透明，就能将下一层从边框开始填充的背景图片从透明边框出透出；除了透出背景图，还可以透出渐变背景，只要将最顶层的背景边框设置成透明，填充色从内边距开始，如下：</p>
+<p><pre><br>.someclass{<br>    padding: 1em;</pre></p>
+<pre><code>border: 1em solid transparent;
+
+background-image:linear-gradient(white,white),
+
+                 repeating-linear-gradient(-45deg,
+
+                 red 0,red %,
+                 transparent 0,transparent 25%,
+                 #58a 0,#58a 37.5%,
+                 transparent 0,transparent 50%;)
+background-clip: padding-box,border-box;
+background-size:cover;
+</code></pre><p>}<br>如图<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171017172701872?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="30%" height="30%"></div><br><b>通过改变<code>padding</code>来改变白色背景大小，通过改变<code>border</code>来改变边框粗细，通过改变<code>background-size</code>来改变渐变色的粗细；</b><br><br></p><p></p>
+<p></p><p>还可以将<code>animation</code>和上面的方法结合起来形成蚂蚁行军的动态效果：<br></p>
+<p><pre><br>@keyframes{to{background-position:100%;}}<br>.someclass{<br>    padding:1em;<br>    border:1px solid transparent;<br>    background:linear-gradient(white,white);<br>    repeating-gradient(-45deg,white 0,white 12.5%,<br>                       black 0,black 25%,<br>                       white 0,white 37.5%,<br>                       black 0,black 50%);<br>    background-size:10px,10px;<br>    animation{ants 12s linear infinite}<br>}<br></pre><br>以下是静止的图片截图<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171017200630275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="30%" height="30%"></div><br><b><code>background-position</code>的值改变动画的速度</b><br></p><hr color="gray"><p></p>
+<p></p><h3><strong>九、自适应的椭圆</strong></h3><p></p>
+<p></p><h4><em>问题：如何将矩形变成多种椭圆形</em></h4><p></p>
+<p></p><h4><em>解决方法:</em></h4><p></p>
+<p></p><p>假设矩形的宽和高为<b>W</b>和<b>H</b>,那么形状如下图：<div align="center"><br><img src="http://img.blog.csdn.net/20171018114238766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br>利用<code>border-radius：50% / 50%</code>把矩形变成圆形，如果是长方形就会变成椭圆形，实现原理如下：<br><br>50%确定了水平和垂直的圆心都在矩形中央，且四个角都变成圆角，再根据矩形的宽和高决定是椭圆还是圆；如下图所示:</p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171018151036324?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br>同理<b>只有上半部分是二分之一的椭圆</b>分析如下，只有上半部分为圆形，所以圆心在矩形下边框的中点，<code>border-radius</code>的值水平是50%，垂直是100%，但是因为只有左上角和右上角有弧度且半径由高度决定，所以<code>border-radius:50%/100% 100% 0 0;</code><br><br><b>只有左半部分是二分之一的椭圆</b>分析如下，圆心在矩形右边框的中点，code&gt;border-radius的值水平是100%，垂直是50%，但是因为只有左上角和左下角有弧度且半径以宽度决定，所以<code>border-radius:100% 0 0 100%/50%;</code><br><br><b>只有左上角是四分之一的椭圆</b>分析如下，圆心在矩形的右下角，code&gt;border-radius的值水平是100%，垂直是100%，但是因为只有左上角有弧度且半径（即椭圆长半轴和短半轴）由高度和宽度共同决定，所以<code>border-radius:100% 0 0 0/100% 0 0 0;</code>更简单的写法是：<code>border-radius:100% 0 0 0;</code><br></p>
+<p></p><p><hr color="gray"></p>
 
       
     </div>
@@ -408,10 +441,10 @@ background-size:80px 100%,60px 100%,40px 100%;</pre>
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -432,7 +465,7 @@ background-size:80px 100%,60px 100%,40px 100%;</pre>
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -445,7 +478,7 @@ background-size:80px 100%,60px 100%,40px 100%;</pre>
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">Tags</span>
                 
               </div>
             
@@ -479,7 +512,7 @@ background-size:80px 100%,60px 100%,40px 100%;</pre>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">七、伪随机背景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">问题:重复背景很呆板,如何让背景图片看起来更自然</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">解决方法:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">七、伪随机背景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">问题:重复背景很呆板,如何让背景图片看起来更自然</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">解决方法:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">八、连续得到图像边框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">问题:让背景图片或图案成为边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">解决方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">九、自适应的椭圆</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">问题：如何将矩形变成多种椭圆形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">解决方法:</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -509,7 +542,7 @@ background-size:80px 100%,60px 100%,40px 100%;</pre>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
