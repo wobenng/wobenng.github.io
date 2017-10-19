@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T21:55:58+08:00">
                 2017-10-16
@@ -386,7 +386,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T14:06:33+08:00">
                 2017-10-16
@@ -471,7 +471,76 @@ background-size:cover;
 <p></p><p>假设矩形的宽和高为<b>W</b>和<b>H</b>,那么形状如下图：<div align="center"><br><img src="http://img.blog.csdn.net/20171018114238766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br>利用<code>border-radius：50% / 50%</code>把矩形变成圆形，如果是长方形就会变成椭圆形，实现原理如下：<br><br>50%确定了水平和垂直的圆心都在矩形中央，且四个角都变成圆角，再根据矩形的宽和高决定是椭圆还是圆；如下图所示:</p>
 <p><div align="center"><img src="http://img.blog.csdn.net/20171018151036324?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br>同理<b>只有上半部分是二分之一的椭圆</b>分析如下，只有上半部分为圆形，所以圆心在矩形下边框的中点，<code>border-radius</code>的值水平是50%，垂直是100%，但是因为只有左上角和右上角有弧度且半径由高度决定，所以<code>border-radius:50%/100% 100% 0 0;</code><br><br><b>只有左半部分是二分之一的椭圆</b>分析如下，圆心在矩形右边框的中点，code&gt;border-radius的值水平是100%，垂直是50%，但是因为只有左上角和左下角有弧度且半径以宽度决定，所以<code>border-radius:100% 0 0 100%/50%;</code><br><br><b>只有左上角是四分之一的椭圆</b>分析如下，圆心在矩形的右下角，code&gt;border-radius的值水平是100%，垂直是100%，但是因为只有左上角有弧度且半径（即椭圆长半轴和短半轴）由高度和宽度共同决定，所以<code>border-radius:100% 0 0 0/100% 0 0 0;</code>更简单的写法是：<code>border-radius:100% 0 0 0;</code><br></p>
 <p></p><p><hr color="gray"></p>
+<p></p><h3><strong>十、平行四边形</strong></h3><p></p>
+<p></p><h4><em>问题：如何将普通块状按钮变成平行四边形按钮,但是保持按钮里面的内容不变</em></h4><p></p>
+<p></p><h4><em>解决方法:</em></h4><p></p>
+<p></p><p><pre><br>.button{<br>    position:relative;<br>    width:150px;<br>    height:75px;<br>   }<br>   .button:before{<br>       content:””;<br>       position:absolute;<br>       top:0;<br>       left:0;<br>       bottom:0;<br>       right:0;<br>       background-color:yellow;<br>       z-index:-1;<br>       transform:skew(45deg);<br>   }</pre><br>   如下图所示：<br><br>   <div align="center"><img src="http://img.blog.csdn.net/20171018194105994?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%">div&gt;<br></div></p><hr color="gray"><p></p>
+<p></p><h3><strong>十一、菱形图片</strong></h3><p></p>
+<p></p><h4><em>问题：如何实现菱形图片</em></h4><p></p>
+<p></p><h4><em>解决方法</em></h4><p></p>
+<p></p><p></p>
+<p><pre><br>.parent{<br>    width:300px;<br>    height:300px;<br>    transform:rotate(45deg);<br>    overflow:hidden;<br>}</pre></p>
+<p>/*424px是.parent的谢贤长度，因为.parent旋转45度，为了使图片能全部填充.parent，所以要将img的宽度设置为斜边长度；</p>
+<p>.parent&gt;img{<br>    width:424px;<br>    height:424px;<br>    transform:rotate(45deg);<br>}<br><br>但是如下图所示，会存在问题：<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171018202538279?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br>上面的一角为什么会缺少呢？因为你将图片扩大，其实是将图片往两边扩大，往下方扩大，但是不会往上扩大，也就是说图片的位置还是不动的，宽度扩大了，下部分扩大了，导致上面部分缺角；那么最好的办法就是将图片按中心扩大，这样可以填充上面的缺角,如下所示：<br></p>
+<pre>
 
+<p>.parent{</p>
+<pre><code>width:300px;
+
+height:300px;
+
+transform:rotate(45deg);
+
+overflow:hidden;
+</code></pre><p>}</p>
+<p>/<em>1.4=424/300  424是斜边长度</em>/</p>
+<p>.parent&gt;img{</p>
+<pre><code>width:100%;
+
+height:100%;
+
+transform:rotate(45deg) scale(1.4);
+&lt;/pre&gt;
+图片如下所示：&lt;br&gt;
+&lt;img  src=&quot;http://img.blog.csdn.net/20171018205104513?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast&quot; width=50% height=50%&gt;
+</code></pre><p></p><p></p>
+<p></p><p><br>除了上面一种方法还有下面一种方法，如下：<br></p>
+<p><pre><br>img{<br>   clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);<br>}<br>/<em>图片左上角X和Y的坐标是0，0，由此可见菱形图片四个角的坐标分别为（从上边框开始）：50% 0，100% 50%，50% 100%，0 50%；</em>/<br></pre><br></p><hr color="gray"><p></p>
+<p></p><h3><strong>十二、切角效果</strong></h3><p></p>
+<p></p><h4><em>问题：如何让元素由缺口</em></h4><p></p>
+<p></p><h4><em>解决方法：</em></h4><p></p>
+<p></p><p></p>
+<p><pre><br>    .someclass{<br>    background:linear-gradient(-45deg,transparent 30px,#58a 0)<br>    }<br></pre><br>可以看到如下图所示：<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171018220829436?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br>但是如果我想要四个缺角呢？如下代码：<br></p>
+<p><pre><br>    .someclass{<br>        background: linear-gradient(135deg,transparent 15px,#58a 0)top left,<br>        linear-gradient(-135deg,transparent 15px,#58a 0)top right,<br>        linear-gradient(45deg,transparent 15px,#58a 0)bottom left,<br>        linear-gradient(-45deg,transparent 15px,#58a 0)bottom right;<br>        background-size: 50% 50%;<br>        background-repeat:no-repeat;<br>    }<br></pre><br>如下图所示：<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171018223422192?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br></p><hr color="gray"><p></p>
+<p></p><h3><strong>十三、梯形标签页</strong></h3><p></p>
+<p></p><h4><em>问题：如何生成梯形标签页</em></h4><p></p>
+<p></p><h4><em>解决方法：</em></h4><p></p>
+<p></p><p></p>
+<p><pre><br>.first{<br>    margin: auto;<br>    position: relative;<br>    top: 50px;<br>    color:white;<br>    text-align: center;<br>    line-height: 20px;<br>    padding:15px 0px;<br>    width: 300px;<br>}<br>.first::before{<br>    content:””;<br>    position: absolute;<br>    top: 0;<br>    right: 0;<br>    bottom: 0;<br>    left: 0;<br>    z-index: -1;<br>    background: #58a;<br>    transform: perspective(.5em) rotateX(5deg) scaleY(2.5);<br>    transform-origin: bottom;<br>    border-radius: 0.5em 0.5em 0 0;<br>}<br></pre></p><p></p>
+<p></p><p>如果只是对.first元素使用<code>perspective(.5em) rotateX(5deg)</code>,会连元素内部的文本也发生变形，所以采用伪元素，保持文本不变。默认变形是以中心轴为变形轴，但是会使元素下方扩大边界以外，所以利用<code>transform</code>可以改变旋转轴，以底线为旋转轴，下方就不会扩大，只会缩小上方，但是上方缩小的太小了，如果元素中心有文本，那么文本就因为上方变成梯形而高度变小而变的不是居中了，这时利用<code>scaleY()</code>进行扩大，并且以底线为中心，那么上方经过调整能扩大到使文本居中，如下图所示：<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171019163206846?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div><br></p><hr color="gray"><p></p>
+<p></p><h3><strong>十四、简单的饼图</strong></h3><p></p>
+<p></p><h4><em>解决方法：</em></h4><p></p>
+<p></p><p></p>
+<p><pre><br>.first{<br>    width: 300px;<br>    height: 300px;<br>    border-radius: 50%;<br>    background-image: linear-gradient(to right,transparent 50%,#655 0);<br>    background-color: green;<br>}<br>.first::before{<br>    content:””;<br>    display: block;<br>    margin-left: 50%;<br>    height: 100%;<br>    border-radius: 0 100% 100% 0/50%;<br>    background-color: inherit;<br>    transform-origin: left;<br>    transform(0.1turn);<br>}<br></pre><br></p><p></p>
+<p></p><p><br>首先为.first元素变成一个背景色为绿色的圆形；然后在圆形左边通过渐变设置一个棕色背景色的半圆形覆盖原先的背景色；现在的圆形是左半边是绿色的，右半边是棕色的；最后利用伪元素再在左半边设置一个颜色继承父元素的右半圆形，改变旋转中心，旋转0.1turn(即360度的10%)；但是如何设置一个动态旋转的饼图呢？如下：<br></p>
+<p><pre><br>.first{<br>    margin: auto;<br>    position: relative;<br>    top: 50px;<br>    width: 300px;<br>    height: 300px;<br>    border-radius: 50%;<br>    background-image: linear-gradient(to right,transparent 50%,#655 0);<br>    background-color: green;<br>}<br>@keyframes spin{<br>    to {transform: rotate(.5turn);}<br>}<br>@keyframes bg{<br>    50%{background: #655;}<br>}<br>.first::before{<br>    content:””;<br>    display: block;<br>    margin-left: 50%;<br>    height: 100%;<br>    border-radius: 0 100% 100% 0/50%;<br>    background-color: inherit;<br>    transform-origin: left;<br>    animation: spin 3s linear infinite,<br>               bg 6s step-end infinite;<br>}<br></pre><br></p><p></p>
+<p></p><p><br>这个代码的意思是为伪元素设置两个动画，第一个动画是在3s内将伪元素旋转至50%，然后从头开始再旋转；但是就是在从头开始旋转的那一刻，伪元素的背景色变成了棕色，因为第二个动画是在50%开始的，也就是第一个动画上一次结束的时候。这次就是原来渐变色背景的棕色加上伪元素旋转遮盖右半圆的棕色，在视觉上就是接着50%饼图的棕色继续叠加。等到第二个动画结束的时候，让第二个动画又重新开始，又正好切在了第一个动画开始的时间点，等到第一个动画进行的3s时即第二个动画的50%，又将伪元素变成棕色开始旋转。<code>step-end</code>的作用时让伪元素在50%变成棕色，而不是渐变成棕色。所以step-start也是可以的。如下图(静态)所示:<br></p><p></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171019204011517?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div></p>
+<p></p><p><br>如何在HTML中直接输入一个数字就能得到相应比例的静态饼图呢？首先在HTML中应这样输入代码：<br></p>
+<p><pre><br>&lt;div class=”first” animation-delay=”-20s”&gt;&lt;div&gt;<br></pre><br></p><br><code>-20s</code>会让动画直接跳转到20s处直接开始。所以我们除了利用<code>ainimation-play-state:paused</code>将伪元素设置成静态的动画，还必须将动画时间设置成100s，那么-20s也能很好的表示为20%，代码如下：<br><p></p>
+<p><pre><br>.first{<br>    margin: auto;<br>    position: relative;<br>    top: 50px;<br>    width: 300px;<br>    height: 300px;<br>    border-radius: 50%;<br>    background-image: linear-gradient(to right,transparent 50%,#655 0);<br>    background-color: green;<br>}<br>@keyframes spin{<br>    to {transform: rotate(.5turn);}<br>}<br>@keyframes bg{<br>    50% {background: #655;}<br>}<br>.first::before{<br>    content:””;<br>    display: block;<br>    margin-left: 50%;<br>    height: 100%;<br>    border-radius: 0 100% 100% 0/50%;<br>    background-color: inherit;<br>    transform-origin: left;<br>    animation: spin 50s linear infinite,<br>               bg 100s step-end infinite;<br>    animation-play-state: paused;<br>    animation-delay: inherit;<br>}<br></pre></p>
+<p></p><p><br>但是这里是伪元素有动画，而在HTML中又没有办法为伪元素设置<code>animation-delay</code>的属性，但是我们可以为伪元素设置<code>animation-delay:inherit</code>来继承父元素的属性。截图如下:<br></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171019220105289?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="50%" height="50%"></div><br></p><p></p>
+<p></p><p>除了用上面的方法外还可以使用svg方法，HTML代码如下：</p><p></p>
+<p><pre><br>&lt;svg  width=”100” height=”100”&gt;<br>       &lt;circle r=”25” cx=”50” cy=”50”/&gt;<br>   &lt;/svg&gt;<br></pre><br>CSS代码如下:<br></p>
+<p><pre><br>circle{<br>    fill: yellowgreen;<br>    stroke: #655;<br>    stroke-width: 50;<br>    stroke-dasharray: 0 158;<br>    animation: fillup 5s linear infinite;<br>}<br>@keyframes fillup{<br>    to{<br>        stroke-dasharray: 158 0;<br>    }<br>}<br>svg{<br>    transform: rotate(-90deg);<br>    border-radius: 50%;<br>    background-color: yellowgreen;<br>}<br></pre><br>以svg为底，以circle为旋转图；旋转的其实是circle的stroke，为stroke设置为svg的半径长度；既然svg有背景色，那为什么还要为circle设置fill呢？？因为circle要设置半径和圆心，那它就占有面积显示在svg上,如图：<br></p>
+<p><div align="center"><br><img src="http://img.blog.csdn.net/20171019230201980?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br></div><br><br>所以除了为svg设置背景色以外，因为不得不用到circle,所以还要为circle设置填充色；&gt;，所以除了为svg设置背景色以外，因为不得不用到circle,所以还要为circle设置填充色；这里要注意<code>stroke-dasharray: 0 158;</code>意思是宽度0，间隔158（158=2πr）；等到动画完成就是扇形宽度158，间隔为0；动画静态图如图所示<br></p>
+<p><div align="center"><br><img src="http://img.blog.csdn.net/20171019230218284?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"><br></div><hr color="gray"></p>
+</pre>
           
         
       
@@ -553,7 +622,7 @@ background-size:cover;
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -566,7 +635,7 @@ background-size:cover;
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 
               </div>
             
@@ -614,7 +683,7 @@ background-size:cover;
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
