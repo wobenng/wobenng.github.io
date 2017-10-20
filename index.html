@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T21:55:58+08:00">
                 2017-10-16
@@ -386,7 +386,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T14:06:33+08:00">
                 2017-10-16
@@ -520,8 +520,9 @@ transform:rotate(45deg) scale(1.4);
 <p></p><h4><em>解决方法：</em></h4><p></p>
 <p></p><p></p>
 <p><pre><br>.first{<br>    margin: auto;<br>    position: relative;<br>    top: 50px;<br>    color:white;<br>    text-align: center;<br>    line-height: 20px;<br>    padding:15px 0px;<br>    width: 300px;<br>}<br>.first::before{<br>    content:””;<br>    position: absolute;<br>    top: 0;<br>    right: 0;<br>    bottom: 0;<br>    left: 0;<br>    z-index: -1;<br>    background: #58a;<br>    transform: perspective(.5em) rotateX(5deg) scaleY(2.5);<br>    transform-origin: bottom;<br>    border-radius: 0.5em 0.5em 0 0;<br>}<br></pre></p><p></p>
-<p></p><p>如果只是对.first元素使用<code>perspective(.5em) rotateX(5deg)</code>,会连元素内部的文本也发生变形，所以采用伪元素，保持文本不变。默认变形是以中心轴为变形轴，但是会使元素下方扩大边界以外，所以利用<code>transform</code>可以改变旋转轴，以底线为旋转轴，下方就不会扩大，只会缩小上方，但是上方缩小的太小了，如果元素中心有文本，那么文本就因为上方变成梯形而高度变小而变的不是居中了，这时利用<code>scaleY()</code>进行扩大，并且以底线为中心，那么上方经过调整能扩大到使文本居中，如下图所示：<br></p>
-<p><div align="center"><img src="http://img.blog.csdn.net/20171019163206846?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div><br></p><hr color="gray"><p></p>
+<p></p><p>如果只是对.first元素使用<code>perspective(.5em) rotateX(5deg)</code>,会连元素内部的文本也发生变形,所以采用伪元素，保持文本不变。默认变形是以中心轴为变形轴，但是会使元素下方扩大边界以外，所以利用<code>transform</code>可以改变旋转轴，以底线为旋转轴，下方就不会扩大，只会缩小上方，但是上方缩小的太小了，如果元素中心有文本，那么文本就因为上方变成梯形而高度变小而变的不是居中了，这时利用<code>scaleY()</code>进行扩大，并且以底线为中心，那么上方经过调整能扩大到使文本居中，如下图所示：</p><p></p>
+<p><div align="center"><img src="http://img.blog.csdn.net/20171019163206846?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd29iZW5uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></div></p>
+<p><hr color="gray"></p>
 <p></p><h3><strong>十四、简单的饼图</strong></h3><p></p>
 <p></p><h4><em>解决方法：</em></h4><p></p>
 <p></p><p></p>
@@ -622,7 +623,7 @@ transform:rotate(45deg) scale(1.4);
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -635,7 +636,7 @@ transform:rotate(45deg) scale(1.4);
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">Tags</span>
                 
               </div>
             
@@ -683,7 +684,7 @@ transform:rotate(45deg) scale(1.4);
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
