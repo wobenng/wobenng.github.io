@@ -300,81 +300,12 @@
         
           
             <p><b><a href="http://bubkoo.com/tags/algorithm/" target="_blank" rel="external">各种排序原文链接</a></b><br><b><a href="http://zh.visualgo.net/en/sorting" target="_blank" rel="external">排序动态效视频</a></b></p>
-<pre>
-function bubbleSort(array){
-    for(var i=1;i<array.length;i++){ for(var="" j="0;j<array.length-1;j++){" if(array[j]="">array[j+1]){
-                var temp=array[j+1];
-                array[j+1]=array[j];
-                array[j]=temp;
-            }
-        }
-    }
-    return array; 
-}
-</array.length;i++){></pre>
-<hr color="gray">
-<pre>
-function insertionSort(array){
-    for(var i=1;i<array.length;i++){ for(var="" j="i;j">0;j--){
-            if(array[j]>array[j-1]){
-                var temp=array[j-1];
-                    array[j-1]=array[j];
-                    array[j]=temp;
-            }
-        }
-    }
-    return array; 
-}
-</array.length;i++){></pre>
-<hr color="gray">
-<pre>
-function selectionSort(array){
-    for(var i=0;i<array.length-1;i++){ var="" minindex="i;" minvalue="array[i];" for(var="" j="i+1;j<array.length;j++){" if(array[j]<minvalue){="" }="" temp="array[i];" array[i]="minValue;" array[minindex]="temp;" return="" array;="" <="" pre="">
-<hr color="gray">
-<pre>
-function bucketSort(array) {
-    var bucket = [], // 正数桶
-        negativeBucket = [], // 负数桶
-        result = []; //结果桶
-    // 入桶
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] < 0) {
-            abs = Math.abs(array[i]);
-            if (!negativeBucket[abs]) {
-                negativeBucket[abs] = [];
-            }
-            negativeBucket[abs].push(array[i]);
-        } else {
-            if (!bucket[array[i]]) {
-                bucket[array[i]] = [];
-            }
-            bucket[array[i]].push(array[i]);
-        }
-    }
-    // 出桶
-    /* 注意这里的length是不是按数组个数定的，是数组下标的最大值加1；
-    不论中间是不是缺少其他连续的数字,所以在下面还增加了一个数组是否存在的判断；*/
-    for (var i = negativeBucket.length - 1; i >= 0; i--) {
-        if (negativeBucket[i]) {
-            for (var j = 0; j < negativeBucket[i].length; j++) {
-                result.push(negativeBucket[i][j]);
-            }
-        }
-    }
-    for (var i = 0; i < bucket.length; i++) {
-        if (bucket[i]) {
-            for (var j = 0; j < bucket[i].length; j++) {
-                result.push(bucket[i][j]);
-            }
-        }
-    }
-    return result;
-}
-</pre>
-<hr color="gray">
-<pre>
-function quickSort(array) {　　
-    if (array.length <= 1)="" {="" return="" array;="" }　　="" var="" pivotindex="Math.floor(array.length" 2);="" pivot="array.splice(pivotIndex," 1)[0];="" left="[];　　" right="[];　　" for="" (var="" i="0;" <="" array.length;="" i++)="" {　　　　="" if="" (array[i]="" pivot)="" {　　　　　　="" left.push(array[i]);　　　　="" }="" else="" right.push(array[i]);　　　　="" 将函数开始处满足条件的数组作为quicksort函数的返回值进行组合　　="" quicksort(left).concat([pivot],="" quicksort(right));="" pre=""></=></pre></array.length-1;i++){></pre>
+<p><hr color="gray"><br>function bubbleSort(array){<br>    for(var i=1;i<array.length;i++){ for(var="" j="0;j<array.length-1;j++){" if(array[j]="">array[j+1]){<br>                var temp=array[j+1];<br>                array[j+1]=array[j];<br>                array[j]=temp;<br>            }<br>        }<br>    }<br>    return array;<br>}</array.length;i++){></p>
+<p><hr color="gray"><br>function insertionSort(array){<br>    for(var i=1;i<array.length;i++){ for(var="" j="i;j">0;j–){<br>            if(array[j]&gt;array[j-1]){<br>                var temp=array[j-1];<br>                    array[j-1]=array[j];<br>                    array[j]=temp;<br>            }<br>        }<br>    }<br>    return array;<br>}</array.length;i++){></p>
+<p><hr color="gray"><br>function selectionSort(array){<br>    for(var i=0;i&lt;array.length-1;i++){<br>        var minIndex=i;<br>        var minValue=array[i];<br>        for(var j=i+1;j&lt;array.length;j++){<br>            if(array[j]&lt;minValue){<br>                minIndex=j;<br>                minValue=array[j];<br>            }<br>        }<br>        var temp=array[i];<br>        array[i]=minValue;<br>        array[minIndex]=temp;<br>    }<br>    return array;<br>}</p>
+<p><hr color="gray"><br>function bucketSort(array) {<br>    var bucket = [], // 正数桶<br>        negativeBucket = [], // 负数桶<br>        result = []; //结果桶<br>    // 入桶<br>    for (var i = 0; i &lt; array.length; i++) {<br>        if (array[i] &lt; 0) {<br>            abs = Math.abs(array[i]);<br>            if (!negativeBucket[abs]) {<br>                negativeBucket[abs] = [];<br>            }<br>            negativeBucket[abs].push(array[i]);<br>        } else {<br>            if (!bucket[array[i]]) {<br>                bucket[array[i]] = [];<br>            }<br>            bucket[array[i]].push(array[i]);<br>        }<br>    }<br>    // 出桶<br>    /<em> 注意这里的length是不是按数组个数定的，是数组下标的最大值加1；<br>    不论中间是不是缺少其他连续的数字,所以在下面还增加了一个数组是否存在的判断；</em>/<br>    for (var i = negativeBucket.length - 1; i &gt;= 0; i–) {<br>        if (negativeBucket[i]) {<br>            for (var j = 0; j &lt; negativeBucket[i].length; j++) {<br>                result.push(negativeBucket[i][j]);<br>            }<br>        }<br>    }<br>    for (var i = 0; i &lt; bucket.length; i++) {<br>        if (bucket[i]) {<br>            for (var j = 0; j &lt; bucket[i].length; j++) {<br>                result.push(bucket[i][j]);<br>            }<br>        }<br>    }<br>    return result;<br>}</p>
+<p><hr color="gray"><br>function quickSort(array) {　　<br>    if (array.length &lt;= 1) {<br>        return array;<br>    }　　<br>    var pivotIndex = Math.floor(array.length / 2);<br>    var pivot = array.splice(pivotIndex, 1)[0];<br>    var left = [];　　<br>    var right = [];　　<br>    for (var i = 0; i &lt; array.length; i++) {　　　　<br>        if (array[i] &lt; pivot) {　　　　　　<br>            left.push(array[i]);　　　　<br>        } else {　　　　　　<br>            right.push(array[i]);　　　　<br>        }　　<br>    }<br>    //将函数开始处满足条件的数组作为quickSort函数的返回值进行组合　　<br>    return quickSort(left).concat([pivot], quickSort(right));</p>
+
           
         
       
