@@ -228,6 +228,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hangbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wobenng的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/31/排序/" itemprop="url">排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T14:58:09+08:00">
+                2017-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b><a href="http://bubkoo.com/tags/algorithm/" target="_blank" rel="external">各种排序原文链接</a></b><br><b><a href="http://zh.visualgo.net/en/sorting" target="_blank" rel="external">排序动态效视频</a></b></p>
+<pre>
+function bubbleSort(array){
+    for(var i=1;i<array.length;i++){ for(var="" j="0;j<array.length-1;j++){" if(array[j]="">array[j+1]){
+                var temp=array[j+1];
+                array[j+1]=array[j];
+                array[j]=temp;
+            }
+        }
+    }
+    return array; 
+}
+</array.length;i++){></pre>
+<hr color="gray">
+<pre>
+function insertionSort(array){
+    for(var i=1;i<array.length;i++){ for(var="" j="i;j">0;j--){
+            if(array[j]>array[j-1]){
+                var temp=array[j-1];
+                    array[j-1]=array[j];
+                    array[j]=temp;
+            }
+        }
+    }
+    return array; 
+}
+</array.length;i++){></pre>
+<hr color="gray">
+<pre>
+function selectionSort(array){
+    for(var i=0;i<array.length-1;i++){ var="" minindex="i;" minvalue="array[i];" for(var="" j="i+1;j<array.length;j++){" if(array[j]<minvalue){="" }="" temp="array[i];" array[i]="minValue;" array[minindex]="temp;" return="" array;="" <="" pre="">
+<hr color="gray">
+<pre>
+function bucketSort(array) {
+    var bucket = [], // 正数桶
+        negativeBucket = [], // 负数桶
+        result = []; //结果桶
+    // 入桶
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+            abs = Math.abs(array[i]);
+            if (!negativeBucket[abs]) {
+                negativeBucket[abs] = [];
+            }
+            negativeBucket[abs].push(array[i]);
+        } else {
+            if (!bucket[array[i]]) {
+                bucket[array[i]] = [];
+            }
+            bucket[array[i]].push(array[i]);
+        }
+    }
+    // 出桶
+    /* 注意这里的length是不是按数组个数定的，是数组下标的最大值加1；
+    不论中间是不是缺少其他连续的数字,所以在下面还增加了一个数组是否存在的判断；*/
+    for (var i = negativeBucket.length - 1; i >= 0; i--) {
+        if (negativeBucket[i]) {
+            for (var j = 0; j < negativeBucket[i].length; j++) {
+                result.push(negativeBucket[i][j]);
+            }
+        }
+    }
+    for (var i = 0; i < bucket.length; i++) {
+        if (bucket[i]) {
+            for (var j = 0; j < bucket[i].length; j++) {
+                result.push(bucket[i][j]);
+            }
+        }
+    }
+    return result;
+}
+</pre>
+<hr color="gray">
+<pre>
+function quickSort(array) {　　
+    if (array.length <= 1)="" {="" return="" array;="" }　　="" var="" pivotindex="Math.floor(array.length" 2);="" pivot="array.splice(pivotIndex," 1)[0];="" left="[];　　" right="[];　　" for="" (var="" i="0;" <="" array.length;="" i++)="" {　　　　="" if="" (array[i]="" pivot)="" {　　　　　　="" left.push(array[i]);　　　　="" }="" else="" right.push(array[i]);　　　　="" 将函数开始处满足条件的数组作为quicksort函数的返回值进行组合　　="" quicksort(left).concat([pivot],="" quicksort(right));="" pre=""></=></pre></array.length-1;i++){></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/《CSS揭秘》笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -968,7 +1162,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -981,7 +1175,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">Tags</span>
                 
               </div>
