@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T14:58:09+08:00">
                 2017-10-31
@@ -315,95 +315,11 @@
     }
     return array; 
 }
+</code></pre><p><hr color="red"><br>    function insertionSort(array){<br>        for(var i=1;i<array.length;i++){ for(var="" j="i;j">0;j–){<br>                if(array[j]&gt;array[j-1]){<br>                    var temp=array[j-1];<br>                        array[j-1]=array[j];<br>                        array[j]=temp;<br>                }<br>            }<br>        }<br>        return array;<br>    }</array.length;i++){></p>
+<p><hr color="red"><br>    function selectionSort(array){<br>        for(var i=0;i&lt;array.length-1;i++){<br>            var minIndex=i;<br>            var minValue=array[i];<br>            for(var j=i+1;j&lt;array.length;j++){<br>                if(array[j]&lt;minValue){<br>                    minIndex=j;<br>                    minValue=array[j];<br>                }<br>            }<br>            var temp=array[i];<br>            array[i]=minValue;<br>            array[minIndex]=temp;<br>        }<br>        return array;<br>    }</p>
+<p><hr color="red"><br>    function bucketSort(array) {<br>        var bucket = [], // 正数桶<br>            negativeBucket = [], // 负数桶<br>            result = []; //结果桶<br>        // 入桶<br>        for (var i = 0; i &lt; array.length; i++) {<br>            if (array[i] &lt; 0) {<br>                abs = Math.abs(array[i]);<br>                if (!negativeBucket[abs]) {<br>                    negativeBucket[abs] = [];<br>                }<br>                negativeBucket[abs].push(array[i]);<br>            } else {<br>                if (!bucket[array[i]]) {<br>                    bucket[array[i]] = [];<br>                }<br>                bucket[array[i]].push(array[i]);<br>            }<br>        }<br>        // 出桶<br>        /<em> 注意这里的length是不是按数组个数定的，是数组下标的最大值加1；<br>        不论中间是不是缺少其他连续的数字,所以在下面还增加了一个数组是否存在的判断；</em>/<br>        for (var i = negativeBucket.length - 1; i &gt;= 0; i–) {<br>            if (negativeBucket[i]) {<br>                for (var j = 0; j &lt; negativeBucket[i].length; j++) {<br>                    result.push(negativeBucket[i][j]);<br>                }<br>            }<br>        }<br>        for (var i = 0; i &lt; bucket.length; i++) {<br>            if (bucket[i]) {<br>                for (var j = 0; j &lt; bucket[i].length; j++) {<br>                    result.push(bucket[i][j]);<br>                }<br>            }<br>        }<br>        return result;<br>    }</p>
+<p><hr color="red"><br>    function quickSort(array) {　　<br>        if (array.length &lt;= 1) {<br>            return array;<br>        }　　<br>        var pivotIndex = Math.floor(array.length / 2);<br>        var pivot = array.splice(pivotIndex, 1)[0];<br>        var left = [];　　<br>        var right = [];　　<br>        for (var i = 0; i &lt; array.length; i++) {　　　　<br>            if (array[i] &lt; pivot) {　　　　　　<br>                left.push(array[i]);　　　　<br>            } else {　　　　　　<br>                right.push(array[i]);　　　　<br>            }　　<br>        }<br>        //将函数开始处满足条件的数组作为quickSort函数的返回值进行组合　　<br>        return quickSort(left).concat([pivot], quickSort(right));<br>    }</p>
 
-function insertionSort(array){
-    for(var i=1;i&lt;array.length;i++){
-        for(var j=i;j&gt;0;j--){
-            if(array[j]&gt;array[j-1]){
-                var temp=array[j-1];
-                    array[j-1]=array[j];
-                    array[j]=temp;
-            }
-        }
-    }
-    return array; 
-}
-
-function selectionSort(array){
-    for(var i=0;i&lt;array.length-1;i++){
-        var minIndex=i;
-        var minValue=array[i];
-        for(var j=i+1;j&lt;array.length;j++){
-            if(array[j]&lt;minValue){
-                minIndex=j;
-                minValue=array[j];
-            }
-        }
-        var temp=array[i];
-        array[i]=minValue;
-        array[minIndex]=temp;
-    }
-    return array;
-}
-
-function bucketSort(array) {
-    var bucket = [], // 正数桶
-        negativeBucket = [], // 负数桶
-        result = []; //结果桶
-    // 入桶
-    for (var i = 0; i &lt; array.length; i++) {
-        if (array[i] &lt; 0) {
-            abs = Math.abs(array[i]);
-            if (!negativeBucket[abs]) {
-                negativeBucket[abs] = [];
-            }
-            negativeBucket[abs].push(array[i]);
-        } else {
-            if (!bucket[array[i]]) {
-                bucket[array[i]] = [];
-            }
-            bucket[array[i]].push(array[i]);
-        }
-    }
-    // 出桶
-    /* 注意这里的length是不是按数组个数定的，是数组下标的最大值加1；
-    不论中间是不是缺少其他连续的数字,所以在下面还增加了一个数组是否存在的判断；*/
-    for (var i = negativeBucket.length - 1; i &gt;= 0; i--) {
-        if (negativeBucket[i]) {
-            for (var j = 0; j &lt; negativeBucket[i].length; j++) {
-                result.push(negativeBucket[i][j]);
-            }
-        }
-    }
-    for (var i = 0; i &lt; bucket.length; i++) {
-        if (bucket[i]) {
-            for (var j = 0; j &lt; bucket[i].length; j++) {
-                result.push(bucket[i][j]);
-            }
-        }
-    }
-    return result;
-}
-
-function quickSort(array) {　　
-    if (array.length &lt;= 1) {
-        return array;     
-    }　　
-    var pivotIndex = Math.floor(array.length / 2);
-    var pivot = array.splice(pivotIndex, 1)[0];
-    var left = [];　　
-    var right = [];　　
-    for (var i = 0; i &lt; array.length; i++) {　　　　
-        if (array[i] &lt; pivot) {　　　　　　
-            left.push(array[i]);　　　　
-        } else {　　　　　　
-            right.push(array[i]);　　　　
-        }　　
-    }
-    //将函数开始处满足条件的数组作为quickSort函数的返回值进行组合　　
-    return quickSort(left).concat([pivot], quickSort(right));
-}
-</code></pre>
           
         
       
@@ -480,7 +396,7 @@ function quickSort(array) {　　
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T11:07:53+08:00">
                 2017-10-31
@@ -800,7 +716,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T21:55:58+08:00">
                 2017-10-16
@@ -929,7 +845,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T14:06:33+08:00">
                 2017-10-16
@@ -1192,7 +1108,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
                 <a href="/archives/">
               
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -1205,7 +1121,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">Tags</span>
                 
               </div>
             
@@ -1253,7 +1169,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
