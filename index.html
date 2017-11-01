@@ -346,7 +346,7 @@ function bucketSort(array) {
             bucket[array[i]].push(array[i]);
         }
     }
-    // 出桶
+
     /* 注意这里的length是不是按数组个数定的，是数组下标的最大值加1；
     不论中间是不是缺少其他连续的数字,所以在下面还增加了一个数组是否存在的判断；*/
     for (var i = negativeBucket.length - 1; i >= 0; i--) {
