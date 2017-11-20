@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/31/排序/index.html">
 <meta property="og:site_name" content="wobenng的博客">
 <meta property="og:description" content="各种排序原文链接排序动态效视频   冒泡排序 function bubbleSort(array){     for(var i=1;i&amp;lt;array.length;i++){         for(var j=0;j&amp;lt;array.length-1;j++){             if(array[j]&amp;gt;array[j+1]){                 var tem">
-<meta property="og:updated_time" content="2017-11-01T07:35:07.456Z">
+<meta property="og:updated_time" content="2017-11-06T05:53:19.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序">
 <meta name="twitter:description" content="各种排序原文链接排序动态效视频   冒泡排序 function bubbleSort(array){     for(var i=1;i&amp;lt;array.length;i++){         for(var j=0;j&amp;lt;array.length-1;j++){             if(array[j]&amp;gt;array[j+1]){                 var tem">
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -259,7 +259,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T14:58:09+08:00">
                 2017-10-31
@@ -403,6 +403,52 @@
     //将函数开始处满足条件的数组作为quickSort函数的返回值进行组合　　
     return quickSort(left).concat([pivot], quickSort(right));
 }
+</code></pre><p><b>堆排序</b></p>
+<pre><code>function heapSort(array) {
+    function swap(array, i, j) {
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    function maxHeapify(array, index, heapSize) {
+      var iMax,
+        iLeft,
+        iRight;
+      while (true) {
+        iMax = index;
+        iLeft = 2 * index + 1;
+        iRight = 2 * (index + 1);
+        if (iLeft &lt; heapSize &amp;&amp; array[index] &lt; array[iLeft]) {
+          iMax = iLeft;
+        }
+        if (iRight &lt; heapSize &amp;&amp; array[iMax] &lt; array[iRight]) {
+          iMax = iRight;
+        }
+        if (iMax != index) {
+          swap(array, iMax, index);
+          index = iMax;
+        } else {
+          break;
+        }
+      }
+    }
+    function buildMaxHeap(array) {
+      var i,
+        iParent = Math.floor(array.length / 2) - 1;
+      for (i = iParent; i &gt;= 0; i--) {
+        maxHeapify(array, i, array.length);
+      }
+    }
+    function sort(array) {
+      buildMaxHeap(array);
+      for (var i = array.length - 1; i &gt; 0; i--) {
+        swap(array, 0, i);
+        maxHeapify(array, 0, i);
+      }
+      return array;
+    }
+    return sort(array);
+}
 </code></pre>
       
     </div>
@@ -442,6 +488,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/20/那些年，我们遇到的bug/" rel="prev" title="那些年，我们遇到的bug">
+                那些年，我们遇到的bug <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -509,8 +559,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">articles</span>
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -522,8 +572,8 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">Tags</span>
                 
               </div>
             
@@ -571,7 +621,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -579,7 +629,7 @@
 
 
 
-  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
 
 
 
