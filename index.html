@@ -300,7 +300,13 @@
         
           
             <p><a href="http://javascript.ruanyifeng.com/dom/node.html" target="_blank" rel="external">参考链接1</a><br><a href="http://luopq.com/2015/11/30/javascript-dom/" target="_blank" rel="external">参考链接2</a></p>
-<h3>什么是DOM？</h3><br>DOM全称文档对象模型 (Document Object Model)；它的作用是对结构化网页（即HTML文档）中的<strong>各类节点</strong>进行解析，根据<strong>节点之间的关系</strong>，形成<strong>树状结构的模型</strong>；网页的整体结构等同于DOM中的树状结构，然后JavaScript就可以通过操作DOM中的节点来对网页进行操作；<br>###组成DOM的节点类型有哪些？<br><br>&gt; Document：整个文档树的顶层节点<br>DocumentType：doctype标签（比如&lt;!DOCTYPE html&gt;）<br>DocumentFragment：文档的片段<br>Element：网页的各种HTML标签（比如<body>、<a>等）<br>Attribute：网页元素的属性（比如class=”right”）<br>Text：标签之间或标签包含的文本<br>Comment：注释<br><br><strong>以上的七个节点都是浏览器内置的Node对象的实例，继承了Node属性和方法；</strong><br><br><h3>DOM中节点之间的关系有哪些？</h3>
+<h3>什么是DOM？</h3><br>DOM全称文档对象模型 (Document Object Model)；它的作用是对结构化网页（即HTML文档）中的<strong>各类节点</strong>进行解析，根据<strong>节点之间的关系</strong>，形成<strong>树状结构的模型</strong>；网页的整体结构等同于DOM中的树状结构，然后JavaScript就可以通过操作DOM中的节点来对网页进行操作；<br><br><h3>组成DOM的节点类型有哪些？</h3>
+
+<blockquote>
+<p>Document：整个文档树的顶层节点<br>DocumentType：doctype标签（比如&lt;!DOCTYPE html&gt;）<br>DocumentFragment：文档的片段<br>Element：网页的各种HTML标签（比如<body>、<a>等）<br>Attribute：网页元素的属性（比如class=”right”）<br>Text：标签之间或标签包含的文本<br>Comment：注释</a></body></p>
+</blockquote>
+<p><strong>以上的七个节点都是浏览器内置的Node对象的实例，继承了Node属性和方法；</strong></p>
+<h3>DOM中节点之间的关系有哪些？</h3>
 
 <p>DOM中各个节点的关系是根据文档之间的节点关系形成的；文档中的节点存在以下关系：</p>
 <blockquote>
@@ -381,7 +387,7 @@
 <p>// HTML代码为<br>// </p><p>Hello World</p><br>var pElementText = document.querySelector(‘p’).firstChild;<br>//在字符串尾部添加，页面显示 Hello World!<br>pElementText.appendData(‘!’);<br>// 删除字符串，第一个参数是开始删除的下标位置，包括该开始位置；第二个参数是删除的长度，页面显示 Hello W<br>pElementText.deleteData(7,5);<br>// 插入字符串，第一个参数是插入下标，第二个参数是要插入的字符串； 页面显示 Hello WHello<br>pElementText.insertData(7,’Hello ‘);<br>//替换字符串，第一个参数是要替换的位置下标，第二个参数是要替换的字符串长度，第三个是替换的字符串；页面显示 Hello WWorld<br>pElementText.replaceData(7,5,’World’);<br>// 获取字符串，第一个参数是获取的起始位置下标；第二个参数是要获取的字符串长度；页面显示不变，返回”World “<br>pElementText.substringData(7,10);<p></p>
 </blockquote>
 <p>2、<code>remove</code>是移除当前的文本节点；<br>3、<code>splitText()，normalize()</code>分别是分割字符串和合并字符串；前者是字符串节点调用该方法，参数是分隔的起始位置下标；后者是包含该文本节点的element节点调用该方法；</p>
-</a></body>
+
           
         
       
