@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-03T22:12:24+08:00">
                 2017-12-03
@@ -303,65 +303,8 @@
 <h3>什么是DOM？</h3><br>DOM全称文档对象模型 (Document Object Model)；它的作用是对结构化网页（即HTML文档）中的<strong>各类节点</strong>进行解析，根据<strong>节点之间的关系</strong>，形成<strong>树状结构的模型</strong>；网页的整体结构等同于DOM中的树状结构，然后JavaScript就可以通过操作DOM中的节点来对网页进行操作；<br><br><h3>组成DOM的节点类型有哪些？</h3>
 
 <blockquote>
-<p>Document：整个文档树的顶层节点<br>DocumentType：doctype标签（比如&lt;!DOCTYPE html&gt;）<br>DocumentFragment：文档的片段<br>Element：网页的各种HTML标签（比如<body>、<a>等）<br>Attribute：网页元素的属性（比如class=”right”）<br>Text：标签之间或标签包含的文本<br>Comment：注释</a></body></p>
+<p>Document：整个文档树的顶层节点<br>DocumentType：doctype标签（比如&lt;!DOCTYPE html&gt;）<br>DocumentFragment：文档的片段<br>Element：网页的各种HTML标签（比如<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">Attribute：网页元素的属性（比如```class=&quot;right&quot;```）</div><div class="line">Text：标签之间或标签包含的文本</div><div class="line">Comment：注释</div><div class="line"></div><div class="line">**以上的七个节点都是浏览器内置的Node对象的实例，继承了Node属性和方法；**</div><div class="line"></div><div class="line">&lt;h3&gt;DOM中节点之间的关系有哪些？&lt;/h3&gt;</div><div class="line"></div><div class="line">DOM中各个节点的关系是根据文档之间的节点关系形成的；文档中的节点存在以下关系：</div><div class="line"></div><div class="line">&gt; 父节点关系（parentNode）：直接的那个上级节点</div><div class="line">子节点关系（childNodes）：直接的下级节点</div><div class="line">同级节点关系（sibling）：拥有同一个父节点的节点;</div><div class="line"></div><div class="line">如下图片所示：</div><div class="line">![](http://upload-images.jianshu.io/upload_images/9131983-5de54149cee2840b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">相邻的左右节点为同级节点，上下节点是父节点与子节点的关系；</div><div class="line"></div><div class="line">###节点对象继承了Node对象的哪些属性？</div><div class="line"></div><div class="line">#####一、和节点特征相关的属性</div><div class="line"></div><div class="line">|类型                   |	nodeName            |	nodeType|</div><div class="line">|:----------------------|--------------------:|:---------:|</div><div class="line">|ELEMENT_NODE           |	大写的HTML元素名   |	1        |</div><div class="line">|ATTRIBUTE_NODE         |	属性名字           |	2      |</div><div class="line">|TEXT_NODE	            |#text                |	3         |</div><div class="line">|COMMENT_NODE	        |#comment             |	8         |</div><div class="line">|DOCUMENT_NODE	        |#document            |	9         |</div><div class="line">|DOCUMENT_FRAGMENT_NODE	|#document-fragment   |	11        |</div><div class="line">|DOCUMENT_TYPE_NODE	|等同于DocumentType.name   |	10      |</div><div class="line"></div><div class="line">1、```Node.nodeName```返回节点的名称；</div><div class="line">2、```Node.nodeType```返回节点类型的常数值；</div><div class="line">3、```Node.nodeValue```返回一个字符串，表示当前节点本身的文本值，且该节点必须是Text节点或者Comment节点，其余节点返回null；该属性可读写；</div><div class="line">4、```Node.textContent```自动忽略当前结点内部的HTML标签，返回当前节点和它的所有后代节点的文本内容；该属性可读写；</div><div class="line">如：</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p><strong>以上的七个节点都是浏览器内置的Node对象的实例，继承了Node属性和方法；</strong></p>
-<h3>DOM中节点之间的关系有哪些？</h3>
-
-<p>DOM中各个节点的关系是根据文档之间的节点关系形成的；文档中的节点存在以下关系：</p>
-<blockquote>
-<p>父节点关系（parentNode）：直接的那个上级节点<br>子节点关系（childNodes）：直接的下级节点<br>同级节点关系（sibling）：拥有同一个父节点的节点;</p>
-</blockquote>
-<p>如下图片所示：<br><img src="http://upload-images.jianshu.io/upload_images/9131983-5de54149cee2840b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>相邻的左右节点为同级节点，上下节点是父节点与子节点的关系；</p>
-<p>###节点对象继承了Node对象的哪些属性？</p>
-<p>#####一、和节点特征相关的属性</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">类型</th>
-<th style="text-align:right">nodeName</th>
-<th style="text-align:center">nodeType</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">ELEMENT_NODE</td>
-<td style="text-align:right">大写的HTML元素名</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:left">ATTRIBUTE_NODE</td>
-<td style="text-align:right">属性名字</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:left">TEXT_NODE</td>
-<td style="text-align:right">#text</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:left">COMMENT_NODE</td>
-<td style="text-align:right">#comment</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td style="text-align:left">DOCUMENT_NODE</td>
-<td style="text-align:right">#document</td>
-<td style="text-align:center">9</td>
-</tr>
-<tr>
-<td style="text-align:left">DOCUMENT_FRAGMENT_NODE</td>
-<td style="text-align:right">#document-fragment</td>
-<td style="text-align:center">11</td>
-</tr>
-<tr>
-<td style="text-align:left">DOCUMENT_TYPE_NODE</td>
-<td style="text-align:right">等同于DocumentType.name</td>
-<td style="text-align:center">10</td>
-</tr>
-</tbody>
-</table>
-<p>1、<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">2、```Node.nodeType```返回节点类型的常数值；</div><div class="line">3、```Node.nodeValue```返回一个字符串，表示当前节点本身的文本值，且该节点必须是Text节点或者Comment节点，其余节点返回null；该属性可读写；</div><div class="line">4、```Node.textContent```自动忽略当前结点内部的HTML标签，返回当前节点和它的所有后代节点的文本内容；该属性可读写；</div><div class="line">如：</div></pre></td></tr></table></figure></p>
 <p>HTML部分</p>
 <div id="example">这是一个<span>例子</span></div>
 
@@ -464,7 +407,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T14:55:45+08:00">
                 2017-11-20
@@ -614,7 +557,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T14:58:09+08:00">
                 2017-10-31
@@ -883,7 +826,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T11:07:53+08:00">
                 2017-10-31
@@ -1203,7 +1146,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T21:55:58+08:00">
                 2017-10-16
@@ -1332,7 +1275,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T14:06:33+08:00">
                 2017-10-16
@@ -1595,7 +1538,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
                 <a href="/archives/">
               
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -1608,7 +1551,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 
               </div>
             
@@ -1656,7 +1599,7 @@ background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
